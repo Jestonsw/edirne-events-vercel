@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Zoom optimization for mobile */
+    touch-action: manipulation;
+  }
+  
+  body {
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+    /* Smooth pinch-to-zoom behavior */
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Optimize touch interactions for zoom */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-edirne-500 hover:bg-edirne-600 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-200 hover:scale-105;
+  }
+  
+  .category-chip {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium text-white;
+  }
+  
+  .event-card {
+    @apply bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-edirne-500 hover:shadow-lg transition-all duration-300;
+  }
+
+  .scrollbar-hide {
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
+}
